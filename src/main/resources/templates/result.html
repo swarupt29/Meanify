@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dictionary Result</title>
+	<link href="https://fonts.googleapis.com/css2?family=Atomic+Age&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="logo-title">
+			          <img src="images/dictionary.png" alt="Dictionary App Logo" class="logo">
+			          <h1>Meanify</h1>
+			      </div>
+		<form th:action="@{/result}" method="get">
+			<input type="text" id="word-input" name="word" placeholder="Enter a word">
+			<button type="submit">Search</button>
+		</form>
+
+		<div id="result-box">
+			<div id="word-container">
+				<h2>Word:</h2>
+				<p id="word" th:text="${word}">Sample Word</p>
+			</div>
+			<div id="definition-container">
+				<h3>Definitions:</h3>
+				<ul id="definition">
+					<li th:each="definition : ${definitions}">
+						<div>
+							<strong>Part of Speech:</strong>
+							<span th:text="${definition.partOfSpeech}"></span>
+						</div>
+						<div>
+							<strong>Definition:</strong>
+							<span th:text="${definition.definition}"></span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
