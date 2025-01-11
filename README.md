@@ -50,7 +50,7 @@ Follow these steps to set up and run the Meanify project using Eclipse/Spring To
    - Right-click on it and select `Run As > Spring Boot App`.
 
 8. **Open any web browser**:
-   - Goto `htts://localhost:8080`.
+   - Goto `http://localhost:8080`.
   
 # Screenshots
 
